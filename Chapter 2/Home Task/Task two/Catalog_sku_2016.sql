@@ -103,3 +103,8 @@ FROM inventory;
 -- COUNT -> Counts the number of rows
 -- SUM -> Returns the total sum of the row
 
+-- Question 2.36
+SELECT warehouseId, 
+		SUM(QuantityonHand) AS TotalItemsOnHand
+FROM inventory
+ORDER BY TotalItemsOnHand DESC
