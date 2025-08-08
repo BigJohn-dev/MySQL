@@ -99,3 +99,7 @@ SELECT COUNT(QuantityOnHand) AS Total_No_of_Items,
         GROUP_CONCAT(QuantityOnHand) AS Concatenated_values        
 FROM inventory;
 
+-- Question 2.35
+-- COUNT -> Counts the number of rows
+-- SUM -> Returns the total sum of the row
+
