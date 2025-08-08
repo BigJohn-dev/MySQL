@@ -91,7 +91,11 @@ FROM inventory
 WHERE SKU_Description LIKE '__d';
 
 -- Question 2.34
-SELECT DISTINCT SKU, SKU_Description
-FROM inventory
-WHERE SKU_Description LIKE '__d';
+SELECT COUNT(QuantityOnHand) AS Total_No_of_Items,
+		SUM(QuantityOnHand) AS Total_Items,
+        AVG(QuantityOnHand) AS Average_Values,
+        MIN(QuantityOnHand) AS Minimum_Items,
+        MAX(QuantityOnHand) AS Maximum_Items,
+        GROUP_CONCAT(QuantityOnHand) AS Concatenated_values        
+FROM inventory;
 
