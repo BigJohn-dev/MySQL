@@ -37,3 +37,32 @@ FROM warehouse, inventory
 WHERE warehouse.WarehouseCity NOT IN ('Atlanta','Bangor','Chicago');
 
 -- Question 2.44
+SELECT CONCAT(SKU_Description, 'is located in', warehouseCity) AS ItemLocation
+FROM warehouse, inventory;
+
+-- Question 2.45
+SELECT inventory.SKU,
+		inventory.SKU_Description,
+		inventory.WarehouseID
+FROM warehouse, inventory
+WHERE warehouse.manager = 'Lucille Smith' ;
+
+-- Question 2.46
+SELECT inventory.SKU,
+		inventory.SKU_Description,
+		inventory.WarehouseID
+FROM warehouse, inventory
+WHERE inventory.warehouseId = warehouse.warehouseId
+		AND warehouse.manager = 'Lucille Smith';
+        
+-- Question 2.47
+SELECT inventory.SKU,
+		inventory.SKU_Description,
+		inventory.WarehouseID
+FROM inventory
+JOIN warehouse
+ON inventory.warehouseId = warehouse.warehouseId
+	  AND warehouse.manager = 'Lucille Smith'
+      
+-- Question 2.48
+
