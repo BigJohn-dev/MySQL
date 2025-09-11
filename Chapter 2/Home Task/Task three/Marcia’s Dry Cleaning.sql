@@ -133,6 +133,6 @@ SELECT
     customer.FirstName,
     customer.Phone
 FROM customer
-JOIN invoice ON customer.CustomerID = invoice.itemNumber
+JOIN invoice ON customer.CustomerID = invoice_item.itemNumber
 WHERE invoice_item.item = 'Dress Shirt'
 ORDER BY customer.lastName, customer.firstName DESC;
